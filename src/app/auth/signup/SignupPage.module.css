@@ -1,0 +1,167 @@
+/* new/src/app/auth/signup/SignupPage.module.css */
+
+/* Reusing styles from LoginPage.module.css for consistency */
+
+.pageContainer {
+    display: flex;
+    min-height: calc(100vh - var(--navbar-height, 0px));
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    justify-content: center;
+  }
+  
+  .signupContainer {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  
+  .logo span:first-child {
+    color: #9d6209;
+    text-shadow: 0 2px 4px rgba(157, 98, 9, 0.2);
+  }
+  
+  .logo span:last-child {
+    color: #1a202c;
+    font-weight: 400;
+  }
+  
+  .title {
+    font-size: 2.75rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #1a202c;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    background: linear-gradient(135deg, #1a202c 0%, #4a5568 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .subtitle {
+    font-size: 1.125rem;
+    color: #64748b;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  
+  .signupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .formGroup {
+    text-align: left;
+    position: relative;
+  }
+  
+  .formLabel {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #374151;
+    font-size: 0.875rem;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    font-weight: 500;
+  }
+  
+  .formInput:focus {
+    outline: none;
+    border-color: #9d6209;
+    box-shadow: 0 0 0 3px rgba(157, 98, 9, 0.15);
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(0);
+  }
+  
+  .formInput::placeholder {
+    color: #9ca3af;
+    font-weight: 400;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 14px 20px;
+    background: #9d6209;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(157, 98, 9, 0.3);
+  }
+  
+  .submitButton:hover {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(157, 98, 9, 0.3);
+    background: #7c2d12;
+  }
+  
+  .submitButton:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(157, 98, 9, 0.2);
+  }
+
+  /* Adjusted focus ring for accessibility */
+  .formInput:focus-visible,
+  .submitButton:focus-visible {
+    outline: 2px solid #9d6209;
+    outline-offset: 3px;
+  }
+
+  .toggleText {
+    text-align: center;
+    margin-top: 32px;
+    padding: 20px 0;
+    border-top: 1px solid #e5e7eb;
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+
+  .toggleLink {
+    color: #9d6209;
+    font-weight: 600;
+    text-decoration: none;
+    transition: text-decoration 0.2s ease;
+  }
+
+  .toggleLink:hover {
+    text-decoration: underline;
+  } 

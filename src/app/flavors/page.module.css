@@ -1,0 +1,209 @@
+/* src/app/flavors/page.module.css */
+.flavorsPage {
+  background-color: #FFF9F0;
+}
+
+.pageHeader {
+  padding: 120px 0 60px;
+  background: linear-gradient(to bottom, rgba(139, 69, 19, 0.1), rgba(139, 69, 19, 0.05));
+  text-align: center;
+}
+
+.productsSection {
+  padding: 60px 0;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.filterCategories {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 8px 16px;
+  background-color: #fff;
+  border: 1px solid rgba(139, 69, 19, 0.2);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterBtn:hover {
+  background-color: rgba(210, 105, 30, 0.1);
+  border-color: var(--secondary);
+}
+
+.filterBtn.active {
+  background-color: var(--secondary);
+  color: #fff;
+  border-color: var(--secondary);
+}
+
+.sortOptions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sortOptions label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.sortSelect {
+  padding: 8px 16px;
+  border: 1px solid rgba(139, 69, 19, 0.2);
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sortSelect:focus {
+  outline: none;
+  border-color: var(--secondary);
+}
+
+.customOrders {
+  padding: 80px 0;
+  background-color: #fff;
+  margin-top: 40px;
+}
+
+.customOrdersContent {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.customOrdersText {
+  flex: 1;
+}
+
+.customOrdersText h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.customOrdersText p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: var(--text-light);
+}
+
+.customFeatures {
+  list-style: none;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+.customFeatures li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+}
+
+.customFeatures i {
+  color: var(--secondary);
+  font-size: 1.1rem;
+}
+
+.inquireBtn {
+  padding: 12px 24px;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.inquireBtn:hover {
+  background-color: var(--secondary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(139, 69, 19, 0.2);
+}
+
+.customOrdersImage {
+  flex: 1;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+  .customOrdersContent {
+    flex-direction: column;
+  }
+  
+  .customOrdersText,
+  .customOrdersImage {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filterCategories,
+  .sortOptions {
+    width: 100%;
+  }
+  
+  .sortOptions {
+    justify-content: space-between;
+  }
+  
+  .sortSelect {
+    flex: 1;
+    max-width: 200px;
+  }
+  
+  .pageHeader {
+    padding: 100px 0 40px;
+  }
+  
+  .productsSection,
+  .customOrders {
+    padding: 40px 0;
+  }
+}

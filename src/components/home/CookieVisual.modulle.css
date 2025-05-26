@@ -1,0 +1,347 @@
+/* CookieVisual.module.css */
+
+.cookieVisual {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Plate styling */
+.cookiePlate {
+  position: absolute;
+  bottom: 0;
+  width: 260px;
+  height: 24px;
+  background: linear-gradient(to bottom, #ffffff, #f9fafb);
+  border-radius: 9999px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(25%);
+}
+
+/* Base cookie styling */
+.cookie {
+  position: absolute;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom right, #fcd34d, #d97706);
+  transition: all 700ms ease-out;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.cookie.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cookie.hovered {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Main cookie */
+.cookieMain {
+  bottom: 30px;
+  right: 90px;
+  width: 180px;
+  height: 180px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+/* Cookie bite */
+.cookieBite {
+  position: absolute;
+  top: -15px;
+  right: -25px;
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  border-radius: 9999px;
+  filter: blur(1px);
+}
+
+/* Chocolate chips */
+.chocoChip {
+  position: absolute;
+  border-radius: 9999px;
+  background: linear-gradient(to bottom right, #78350f, #451a03);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mainChip1 {
+  top: 25%;
+  left: 25%;
+  width: 24px;
+  height: 24px;
+}
+
+.mainChip2 {
+  top: 33%;
+  right: 33%;
+  width: 30px;
+  height: 30px;
+}
+
+.mainChip3 {
+  bottom: 25%;
+  left: 33%;
+  width: 28px;
+  height: 28px;
+}
+
+.mainChip4 {
+  top: 50px;
+  right: 32px;
+  width: 20px;
+  height: 20px;
+}
+
+.mainChip5 {
+  bottom: 32px;
+  right: 48px;
+  width: 22px;
+  height: 22px;
+}
+
+.mainChip6 {
+  bottom: 64px;
+  left: 32px;
+  width: 16px;
+  height: 16px;
+}
+
+/* Side cookies */
+.cookieSide1 {
+  bottom: 45px;
+  left: 80px;
+  width: 120px;
+  height: 120px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition-delay: 300ms;
+}
+
+.side1Chip1 {
+  top: 33%;
+  left: 25%;
+  width: 18px;
+  height: 18px;
+}
+
+.side1Chip2 {
+  bottom: 32px;
+  right: 32px;
+  width: 22px;
+  height: 22px;
+}
+
+.side1Chip3 {
+  top: 48px;
+  right: 40px;
+  width: 15px;
+  height: 15px;
+}
+
+.cookieSide2 {
+  bottom: 20px;
+  right: 190px;
+  width: 90px;
+  height: 90px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition-delay: 400ms;
+}
+
+.side2Chip1 {
+  top: 30%;
+  left: 30%;
+  width: 16px;
+  height: 16px;
+}
+
+.side2Chip2 {
+  bottom: 25%;
+  right: 25%;
+  width: 14px;
+  height: 14px;
+}
+
+.cookieSide3 {
+  bottom: 15px;
+  left: 180px;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition-delay: 500ms;
+}
+
+/* Cookie crumbs */
+.crumb {
+  position: absolute;
+  background-color: #fbbf24;
+  border-radius: 9999px;
+  opacity: 0;
+  transition: all 500ms ease-out;
+}
+
+.crumb.visible {
+  opacity: 0.8;
+}
+
+.crumb1 {
+  bottom: 16px;
+  left: 140px;
+  width: 8px;
+  height: 8px;
+  transition-delay: 600ms;
+  animation: float 3s ease-in-out infinite;
+}
+
+.crumb2 {
+  bottom: 10px;
+  left: 160px;
+  width: 12px;
+  height: 12px;
+  transition-delay: 700ms;
+  animation: float 4s ease-in-out infinite 0.5s;
+}
+
+.crumb3 {
+  bottom: 32px;
+  right: 64px;
+  width: 8px;
+  height: 8px;
+  transition-delay: 800ms;
+  animation: float 5s ease-in-out infinite 1s;
+}
+
+.crumb4 {
+  bottom: 26px;
+  right: 140px;
+  width: 6px;
+  height: 6px;
+  transition-delay: 900ms;
+  animation: float 3.5s ease-in-out infinite 0.7s;
+}
+
+.crumb5 {
+  bottom: 16px;
+  right: 40px;
+  width: 10px;
+  height: 10px;
+  transition-delay: 1000ms;
+  animation: float 4.5s ease-in-out infinite 1.2s;
+}
+
+/* Steam effects */
+.steam {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  filter: blur(4px);
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.cookie.visible .steam {
+  opacity: 0.6;
+}
+
+.steam1 {
+  bottom: 48px;
+  right: 120px;
+  width: 12px;
+  height: 40px;
+  animation: steam 3s ease-out infinite;
+}
+
+.steam2 {
+  bottom: 48px;
+  right: 90px;
+  width: 8px;
+  height: 32px;
+  animation: steam 3s ease-out 1.5s infinite;
+}
+
+.steam3 {
+  bottom: 48px;
+  right: 150px;
+  width: 10px;
+  height: 36px;
+  animation: steam 4s ease-out 0.5s infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes steam {
+  0% { 
+    transform: translateY(0) scale(1); 
+    opacity: 0; 
+  }
+  50% { 
+    opacity: 0.6; 
+  }
+  100% { 
+    transform: translateY(-20px) scale(1.5); 
+    opacity: 0; 
+  }
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .cookieVisual {
+    height: 380px;
+  }
+  
+  .cookieMain {
+    width: 150px;
+    height: 150px;
+    right: 70px;
+  }
+  
+  .cookieBite {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .cookieSide1 {
+    width: 100px;
+    height: 100px;
+    left: 65px;
+  }
+  
+  .cookieSide2 {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .cookieSide3 {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .cookiePlate {
+    width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookieVisual {
+    height: 320px;
+  }
+  
+  .cookieMain {
+    width: 120px;
+    height: 120px;
+    right: 50px;
+  }
+  
+  .cookiePlate {
+    width: 180px;
+  }
+}

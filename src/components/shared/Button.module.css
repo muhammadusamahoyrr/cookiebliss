@@ -1,0 +1,145 @@
+/* src/components/shared/Button.module.css */
+.button {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Primary button */
+.primary {
+  background-color: #9d6209;
+  color: #fff8f0;
+  border: none;
+}
+
+.primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary);
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.primary:hover::before {
+  width: 100%;
+}
+
+.primary:hover {
+  background-color: #b97a0a;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(210, 105, 30, 0.4);
+}
+
+/* Secondary button */
+.secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--primary);
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.secondary:hover::before {
+  width: 100%;
+}
+
+.secondary:hover {
+  color: var(--white);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(139, 69, 19, 0.2);
+}
+
+/* Ghost button */
+.ghost {
+  background-color: transparent;
+  color: var(--primary);
+  border: none;
+}
+
+.ghost:hover {
+  color: var(--secondary);
+  transform: translateY(-3px);
+}
+
+/* Icon button */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.button:hover .icon {
+  transform: translateX(3px);
+}
+
+/* Text part of button */
+.text {
+  position: relative;
+  z-index: 2;
+}
+
+/* Small variant */
+.small {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+}
+
+/* Large variant */
+.large {
+  padding: 1.2rem 2.4rem;
+  font-size: 1.1rem;
+}
+
+/* Full width variant */
+.fullWidth {
+  width: 100%;
+}
+
+/* Disabled state */
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.button:disabled::before {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .button {
+    padding: 0.8rem 1.6rem;
+    font-size: 0.95rem;
+  }
+}

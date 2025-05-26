@@ -1,0 +1,39 @@
+/* src/components/flavors/ProductGrid.module.css */
+.productGridContainer {
+  margin-bottom: 50px;
+}
+
+/* Cleaned up .productsContainer styles */
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Default to 3 columns on larger screens */
+  gap: 30px;
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box; /* Ensure padding/border is included in element's total width */
+}
+
+@media (max-width: 900px) {
+  .productsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .productsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.viewAllContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.viewAllBtn {
+  padding: 14px 30px;
+}

@@ -1,0 +1,286 @@
+/* src/components/contact/ContactInfo.module.css */
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.infoCard {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(123, 63, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(210, 105, 30, 0.1);
+}
+
+.infoCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(123, 63, 0, 0.12);
+}
+
+.visitCard {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.infoCardContent {
+  padding: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.infoIconContainer {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.infoCard:hover .infoIconContainer {
+  transform: scale(1.1);
+}
+
+.visitCard .infoIconContainer {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.infoIcon {
+  font-size: 24px;
+}
+
+.infoText {
+  flex-grow: 1;
+}
+
+.infoCard h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.visitCard h3,
+.visitCard p {
+  color: white;
+}
+
+.infoCard p {
+  margin: 0;
+  line-height: 1.5;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.hoursContainer {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hoursLabel {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.hoursDetails {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.mapLink {
+  margin-top: 20px;
+}
+
+.mapBtn {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mapBtn:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.infoCardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.callCard .infoCardContent,
+.emailCard .infoCardContent {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.callCard .infoIconContainer,
+.emailCard .infoIconContainer {
+  margin-bottom: 15px;
+  background-color: rgba(210, 105, 30, 0.15);
+}
+
+.phoneNumber,
+.emailAddress {
+  font-weight: 600;
+  color: var(--secondary) !important;
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.emailAddress a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.emailAddress a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.callNote,
+.emailNote {
+  color: var(--text-light) !important;
+  font-size: 0.8rem;
+  margin-top: 5px !important;
+}
+
+/* Social Card */
+.socialCard {
+  background-color: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(123, 63, 0, 0.08);
+  border: 1px solid rgba(210, 105, 30, 0.1);
+}
+
+.socialCard h3 {
+  margin: 0 0 15px;
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.socialCard p {
+  margin: 0 0 20px;
+  color: var(--text-light);
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #F9F2EA;
+  border-radius: 50%;
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 1px solid rgba(210, 105, 30, 0.1);
+}
+
+.socialIcon:hover {
+  background-color: var(--secondary);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(210, 105, 30, 0.2);
+}
+
+.newsletter h4 {
+  margin: 0 0 15px;
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.newsletterForm {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletterForm input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 2px solid var(--input-border);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  background-color: var(--input-bg);
+  color: var(--text-dark);
+  font-family: 'Poppins', sans-serif;
+}
+
+.newsletterForm input:focus {
+  border-color: var(--secondary);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.1);
+}
+
+.newsletterForm button {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+  font-size: 0.9rem;
+}
+
+.newsletterForm button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(210, 105, 30, 0.3);
+}
+
+.privacyNote {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-top: 10px !important;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .infoCardsGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .newsletterForm {
+    flex-direction: column;
+  }
+  
+  .newsletterForm button {
+    width: 100%;
+  }
+}

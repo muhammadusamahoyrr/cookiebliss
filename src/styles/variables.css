@@ -1,0 +1,47 @@
+/* src/styles/variables.css (CSS Variables) */
+
+:root {
+  --primary: #8B4513;       /* Brown */
+  --primary-light: #A0522D; /* Light Brown */
+  --secondary: #D2691E;     /* Chocolate */
+  --accent: #FFD700;        /* Gold */
+  --light-bg: #FFF9F0;      /* Light Cream Background */
+  --text-dark: #3A2618;     /* Dark Brown Text */
+  --text-light: #6B4226;    /* Medium Brown Text */
+  --white: #FFFFFF;         /* White */
+  --cookie-color: #E6BB8A;  /* Cookie Base Color */
+  --cookie-dark: #C89B69;   /* Darker Cookie Color */
+  --crumb-color: #F5DEB3;   /* Wheat/Crumb Color */
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+  
+  /* Transitions */
+  --transition-fast: all 0.2s ease;
+  --transition-normal: all 0.3s ease;
+  --transition-slow: all 0.5s ease;
+  
+  /* Z-index layers */
+  --z-behind: -1;
+  --z-normal: 1;
+  --z-overlay: 10;
+  --z-modal: 100;
+  --z-highest: 1000;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}

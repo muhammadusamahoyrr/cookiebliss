@@ -1,0 +1,37 @@
+// This is an SVG version of the cookie visual that can be used in case you 
+// don't have an image file. Save this as cookie-visual.svg in your public folder.
+
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Plate/Shadow -->
+  <ellipse cx="300" cy="500" rx="220" ry="40" fill="#F0F0F0" fill-opacity="0.8" />
+  
+  <!-- Main large cookie -->
+  <circle cx="350" cy="300" r="150" fill="url(#cookieGradient)" />
+  <!-- Bite from cookie -->
+  <circle cx="470" cy="230" r="80" fill="#FFF9F0" />
+  
+  <!-- Second cookie -->
+  <circle cx="200" cy="370" r="100" fill="url(#cookieGradient)" />
+  
+  <!-- Chocolate chips on main cookie -->
+  <circle cx="300" cy="250" r="20" fill="#592C15" />
+  <circle cx="380" cy="330" r="25" fill="#592C15" />
+  <circle cx="320" cy="370" r="18" fill="#592C15" />
+  <circle cx="410" cy="270" r="15" fill="#592C15" />
+  <circle cx="280" cy="320" r="22" fill="#592C15" />
+  <circle cx="350" cy="220" r="16" fill="#592C15" />
+  
+  <!-- Chocolate chips on second cookie -->
+  <circle cx="180" cy="350" r="15" fill="#592C15" />
+  <circle cx="230" cy="380" r="18" fill="#592C15" />
+  <circle cx="200" cy="330" r="12" fill="#592C15" />
+  <circle cx="170" cy="390" r="10" fill="#592C15" />
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <radialGradient id="cookieGradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 300) rotate(90) scale(150)">
+      <stop offset="0" stop-color="#E6BB8A" />
+      <stop offset="1" stop-color="#C89B69" />
+    </radialGradient>
+  </defs>
+</svg>

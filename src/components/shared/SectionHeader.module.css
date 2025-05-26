@@ -1,0 +1,91 @@
+/* src/components/shared/SectionHeader.module.css */
+.sectionHeader {
+  margin-bottom: 50px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight {
+  color: var(--secondary);
+  position: relative;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondary);
+  bottom: -5px;
+  left: 0;
+}
+
+.accentDecoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.accentLine {
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(to right, transparent, var(--secondary), transparent);
+}
+
+.accentDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--secondary);
+  margin: 0 15px;
+  box-shadow: 0 0 0 4px rgba(210, 105, 30, 0.2);
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+  
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+  
+  .accentLine {
+    width: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  
+  .accentLine {
+    width: 30px;
+  }
+  
+  .accentDot {
+    width: 8px;
+    height: 8px;
+  }
+}

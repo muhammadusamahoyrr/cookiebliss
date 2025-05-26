@@ -1,0 +1,170 @@
+/* src/app/page.module.css */
+.featuredProducts {
+  padding: 100px 0;
+  background-color: #FFF9F0;
+  position: relative;
+  overflow: hidden;
+}
+
+.featuredProducts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(rgba(210, 105, 30, 0.03) 2px, transparent 2px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ctaContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.viewAllBtn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.testimonials {
+  padding: 100px 0;
+  background-color: #FFF;
+  position: relative;
+}
+
+.testimonials::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent, rgba(210, 105, 30, 0.05));
+  pointer-events: none;
+}
+
+.cta {
+  padding: 100px 0;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  top: -150px;
+  right: 10%;
+}
+
+.cta::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  bottom: -100px;
+  left: 5%;
+}
+
+.ctaContent {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaContent h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.ctaContent p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.orderBtn {
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+  background-color: #fff;
+  color: var(--primary);
+}
+
+.orderBtn:hover {
+  background-color: var(--accent);
+  color: var(--primary);
+}
+
+.orderBtn::before {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .featuredProducts,
+  .testimonials,
+  .cta {
+    padding: 70px 0;
+  }
+  
+  .ctaContent h2 {
+    font-size: 2rem;
+  }
+  
+  .ctaContent p {
+    font-size: 1rem;
+  }
+  
+  .orderBtn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* If you have a .tag, .chip, .badge, or similar class for testimonials, add or update like this: */
+.tag, .chip, .badge {
+  background-color: #9d6209;
+  color: #fff8f0;
+}
+
+/* === Cookie Review Section Accent Color Overrides === */
+.primary-btn {
+  background-color: #9d6209 !important;
+  color: white !important;
+  border: none !important;
+}
+.primary-btn:hover {
+  background-color: #6B3818 !important;
+}
+
+.author-avatar {
+  background-color: #9d6209 !important;
+  color: white !important;
+}
+
+.stars {
+  color: #9d6209 !important;
+}
+.rating-star:hover,
+.rating-star.active {
+  color: #9d6209 !important;
+}
+
+.cookie-choice:checked + .cookie-label {
+  background-color: #9d6209 !important;
+  color: white !important;
+  border-color: #9d6209 !important;
+}

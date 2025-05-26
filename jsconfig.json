@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/*": ["lib/*"],
+      "@/models/*": ["src/models/*"]
+    }
+  },
+  "include": ["**/*.js", "**/*.jsx"]
+}

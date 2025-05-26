@@ -1,0 +1,371 @@
+.container {
+  padding: 4rem 1.5rem;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #4a5568; /* Equivalent to gray-800 */
+  margin-bottom: 1rem;
+}
+
+.header h1 span {
+  color: #dd6b20; /* Equivalent to orange-600 */
+}
+
+.header p {
+  font-size: 1.25rem;
+  color: #718096; /* Equivalent to gray-600 */
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.reviewsGridContainer { /* Added a container class for ReviewGrid */
+  margin-bottom: 3rem; /* Equivalent to mb-12 */
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.statItem {
+  text-align: center;
+  min-width: 120px;
+}
+
+.statValue {
+  font-size: 2.25rem;
+  font-weight: bold;
+  color: #dd6b20; /* Equivalent to orange-600 */
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  color: #718096; /* Equivalent to gray-500 */
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.readMoreButtonContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.readMoreButton {
+  background-color: #dd6b20; /* Equivalent to orange-600 */
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease-in-out;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.readMoreButton:hover {
+  background-color: #c05621; /* Equivalent to orange-700 */
+}
+
+/* ReviewCard Styles */
+.reviewCard {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.reviewCard:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.25rem);
+}
+
+.quoteIcon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-size: 3.75rem;
+  color: #fbd38d; /* Equivalent to orange-200 */
+  font-family: serif;
+}
+
+.reviewText {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 1.5rem;
+  color: #4a5568; /* Equivalent to gray-700 */
+  font-style: italic;
+  line-height: 1.625;
+}
+
+.reviewerInfo {
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #fbd38d; /* Equivalent to orange-200 */
+}
+
+.reviewerAvatar {
+  width: 3rem;
+  height: 3rem;
+  background-color: #dd6b20; /* Equivalent to orange-600 */
+  border-radius: 9999px; /* Equivalent to rounded-full */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.125rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.reviewerDetails h4 {
+  color: #c05621; /* Equivalent to orange-800 */
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.ratingStars {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.ratingStarFilled {
+  color: #f6e05e; /* Equivalent to yellow-500 */
+}
+
+.ratingStarEmpty {
+   color: #d1d5db; /* Equivalent to gray-300 */
+}
+
+.reviewMeta {
+  color: #718096; /* Equivalent to gray-500 */
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* ReviewForm Styles */
+.reviewFormContainer {
+  max-width: 42rem;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reviewFormContainer h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #c05621; /* Equivalent to orange-800 */
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.reviewFormContainer p {
+  color: #718096; /* Equivalent to gray-600 */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formLabel {
+  display: block;
+  color: #4a5568; /* Equivalent to gray-700 */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db; /* Equivalent to gray-300 */
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: #ed8936; /* Equivalent to orange-500 */
+  box-shadow: 0 0 0 3px rgba(237, 137, 54, 0.3); /* Equivalent to ring-2 ring-orange-500 */
+}
+
+.ratingStarsForm {
+  display: flex;
+}
+
+.ratingStarButton {
+  font-size: 1.875rem;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-right: 0.25rem;
+}
+
+.ratingStarButton:last-child {
+    margin-right: 0;
+}
+
+.ratingStarButton.filled {
+  color: #f6e05e; /* Equivalent to yellow-500 */
+}
+
+.ratingStarButton.empty {
+  color: #d1d5db; /* Equivalent to gray-300 */
+}
+
+.ratingStarButton:hover {
+  color: #fbd38d; /* Equivalent to yellow-400 */
+}
+
+.cookieOptionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.checkboxInput {
+  width: 1rem;
+  height: 1rem;
+  color: #dd6b20; /* Equivalent to orange-600 */
+  border-color: #d1d5db; /* Equivalent to gray-300 */
+  border-radius: 0.25rem;
+}
+
+.checkboxLabel span {
+  color: #4a5568; /* Equivalent to gray-700 */
+}
+
+.uploadPhotoInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db; /* Equivalent to gray-300 */
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.uploadPhotoFileName {
+  font-size: 0.875rem;
+  color: #718096; /* Equivalent to gray-600 */
+  margin-top: 0.5rem;
+}
+
+.submitButton {
+  width: 100%;
+  background-color: #dd6b20; /* Equivalent to orange-600 */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitButton span:first-child {
+    margin-right: 0.5rem;
+}
+
+.submitButton:hover {
+  background-color: #c05621; /* Equivalent to orange-700 */
+}
+
+.thankYouMessage {
+  text-align: center;
+  padding: 3rem;
+  background-color: #fffaf0; /* Equivalent to orange-50 */
+  border-radius: 0.5rem;
+}
+
+.thankYouMessage .icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.thankYouMessage h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #c05621; /* Equivalent to orange-800 */
+  margin-bottom: 1rem;
+}
+
+.thankYouMessage p {
+  color: #718096; /* Equivalent to gray-600 */
+  margin-bottom: 1rem;
+}
+
+.thankYouMessage strong {
+  color: #dd6b20; /* Equivalent to orange-600 */
+}
+
+.writeAnotherReviewButton {
+  background-color: #dd6b20; /* Equivalent to orange-600 */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease-in-out;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.writeAnotherReviewButton:hover {
+  background-color: #c05621; /* Equivalent to orange-700 */
+}
+
+.mainContent {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #fffaf0, #ffffff, #fffaf0); /* Equivalent to bg-gradient-to-br from-orange-50 via-white to-orange-50 */
+}
+
+.sweetWords {
+  color: #dd6b20; /* Equivalent to text-orange-600 */
+}
+
+.couponCode {
+  color: #dd6b20; /* Equivalent to text-orange-600 */
+} 
