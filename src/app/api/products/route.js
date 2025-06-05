@@ -1,8 +1,8 @@
 // src/app/api/products/route.js
 import { NextResponse } from 'next/server';
-import dbConnect from '../../lib/dbConnect.js';
-import Product from '../../models/Product.js';
-import { protectedRoute } from '../../lib/auth.js';
+import dbConnect from '@/lib/dbConnect';
+import Product from '@/models/Product';
+import { protectedRoute } from '@/lib/auth';
 
 export async function GET(request) {
     try {
@@ -17,7 +17,6 @@ export async function GET(request) {
         const sortOrder = url.searchParams.get('sortOrder') || 'desc';
         const search = url.searchParams.get('search');
 
-        // Build query
         const query = { isActive: true };
 
         if (category && category !== 'all') {
@@ -32,7 +31,6 @@ export async function GET(request) {
             query.$text = { $search: search };
         }
 
-        // Build sort object
         const sort = {};
         const validSortFields = ['createdAt', 'price', 'rating', 'title'];
         if (validSortFields.includes(sortBy)) {
@@ -41,10 +39,9 @@ export async function GET(request) {
             sort.createdAt = -1;
         }
 
-        // Execute query with pagination
         const products = await Product.find(query)
             .sort(sort)
-            .limit(limit * 1)
+            .limit(limit)
             .skip((page - 1) * limit)
             .select('-__v');
 
@@ -62,18 +59,15 @@ export async function GET(request) {
         }, { status: 200 });
 
     } catch (error) {
-        console.error('Get products error:', error);
         return NextResponse.json({ 
             success: false, 
-            message: 'Failed to retrieve products',
-            error: error.message 
+            message: 'Failed to fetch products' 
         }, { status: 500 });
     }
 }
 
 export async function POST(request) {
     try {
-        // Verify admin access
         const auth = await protectedRoute(request, true);
         if (auth instanceof NextResponse) return auth;
 
@@ -81,7 +75,6 @@ export async function POST(request) {
 
         const productData = await request.json();
 
-        // Basic validation
         const requiredFields = ['title', 'description', 'price', 'image'];
         for (const field of requiredFields) {
             if (!productData[field]) {
@@ -92,7 +85,6 @@ export async function POST(request) {
             }
         }
 
-        // Create new product
         const newProduct = new Product({
             ...productData,
             isActive: true,
@@ -109,8 +101,6 @@ export async function POST(request) {
         }, { status: 201 });
 
     } catch (error) {
-        console.error('Create product error:', error);
-
         if (error.name === 'ValidationError') {
             const messages = Object.values(error.errors).map(err => err.message);
             return NextResponse.json({ 
@@ -121,8 +111,7 @@ export async function POST(request) {
 
         return NextResponse.json({ 
             success: false, 
-            message: 'Failed to create product',
-            error: error.message 
+            message: 'Failed to create product'
         }, { status: 500 });
     }
 }

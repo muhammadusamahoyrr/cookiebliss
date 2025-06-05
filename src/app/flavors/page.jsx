@@ -19,7 +19,7 @@ const allProducts = [
     title: 'Caramel Pecan',
     description: 'Rich caramel swirls with crunchy pecan pieces',
     price: 6.49,
-    image: '/assests/images/image0.png',
+    image: '/assests/images/image1.jpg',
     rating: 5,
     reviews: 126,
     badge: 'new'
@@ -29,7 +29,7 @@ const allProducts = [
     title: 'Double Chocolate',
     description: 'Intense chocolate cookie with premium cocoa chunks',
     price: 5.99,
-    image: '/assests/images/image1.jpg',
+    image: '/assests/images/image7.png',
     rating: 4,
     reviews: 189
   },
@@ -38,7 +38,7 @@ const allProducts = [
     title: 'Lemon Blueberry',
     description: 'Zesty lemon with sweet blueberry pieces',
     price: 6.99,
-    image: '/assests/images/image2.jpg',
+    image: '/assests/images/image4.png',
     rating: 4.5,
     reviews: 142,
     badge: 'limited'
@@ -57,7 +57,7 @@ const allProducts = [
     title: 'White Chocolate Macadamia',
     description: 'Creamy white chocolate with crunchy macadamia nuts',
     price: 6.99,
-    image: '/assests/images/image4.png',
+    image: '/assests/images/image5.png',
     rating: 4.5,
     reviews: 176
   },
@@ -66,7 +66,7 @@ const allProducts = [
     title: 'Peanut Butter',
     description: 'Rich peanut butter flavor in every bite',
     price: 5.99,
-    image: '/assests/images/image5.png',
+    image: '/assests/images/image2.png',
     rating: 4,
     reviews: 122
   },
@@ -132,40 +132,6 @@ export default function FlavorsPage() {
           </div>
           
           <ProductGrid initialProducts={allProducts} showAll={true} />
-        </div>
-      </section>
-      
-      <section className={styles.customOrders}>
-        <div className="container">
-          <div className={styles.customOrdersContent}>
-            <div className={styles.customOrdersText}>
-              <h2>Custom Cookie Orders</h2>
-              <p>
-                Planning a special event? We offer custom cookie platters, 
-                personalized designs, and bulk ordering options for any occasion.
-              </p>
-              <ul className={styles.customFeatures}>
-                <li><i className="fas fa-check"></i> Corporate events & gifting</li>
-                <li><i className="fas fa-check"></i> Weddings & celebrations</li>
-                <li><i className="fas fa-check"></i> Holiday specials</li>
-                <li><i className="fas fa-check"></i> Custom flavors available</li>
-              </ul>
-              <button className={styles.inquireBtn}>
-                <i className="fas fa-envelope"></i> Inquire Now
-              </button>
-            </div>
-            
-            <div className={styles.customOrdersImage}>
-              <div className={styles.imageWrapper}>
-                <img 
-                  src=".image" 
-                  alt="Custom cookie platter"
-                  width={500}
-                  height={400}
-                />
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </main>

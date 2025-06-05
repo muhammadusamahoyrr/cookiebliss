@@ -1,11 +1,33 @@
 'use client';
 
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const CartContext = createContext(null);
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Load cart from localStorage after component mounts on client
+  useEffect(() => {
+    if (mounted) {
+      const savedCart = localStorage.getItem('cart');
+      if (savedCart) {
+        setCartItems(JSON.parse(savedCart));
+      }
+    }
+  }, [mounted]);
+
+  // Save cart to localStorage whenever it changes, only on client
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+    }
+  }, [cartItems, mounted]);
 
   const addItemToCart = (product) => {
     setCartItems((prevItems) => {
@@ -14,18 +36,13 @@ export const CartProvider = ({ children }) => {
         return prevItems.map(item =>
           item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
         );
-      } else {
-        return [...prevItems, { ...product, quantity: 1 }];
       }
+      return [...prevItems, { ...product, quantity: 1 }];
     });
-    // In a real app, you would also send this update to your backend API here.
-    console.log('Added to cart (frontend state only):', product.title);
   };
 
   const removeItemFromCart = (productId) => {
     setCartItems((prevItems) => prevItems.filter(item => item.id !== productId));
-    // In a real app, you would also send this update to your backend API here.
-    console.log('Removed from cart (frontend state only):', productId);
   };
 
   const updateItemQuantity = (productId, quantity) => {
@@ -34,11 +51,16 @@ export const CartProvider = ({ children }) => {
         return prevItems.filter(item => item.id !== productId);
       }
       return prevItems.map(item =>
-        item.id === productId ? { ...item, quantity: quantity } : item
+        item.id === productId ? { ...item, quantity } : item
       );
     });
-    // In a real app, you would also send this update to your backend API here.
-    console.log(`Updated quantity for ${productId} to ${quantity} (frontend state only)`);
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+    if (mounted) {
+      localStorage.removeItem('cart');
+    }
   };
 
   const getCartTotal = () => {
@@ -46,11 +68,19 @@ export const CartProvider = ({ children }) => {
   };
 
   const getItemCount = () => {
-      return cartItems.reduce((count, item) => count + item.quantity, 0);
+    return cartItems.reduce((count, item) => count + item.quantity, 0);
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addItemToCart, removeItemFromCart, updateItemQuantity, getCartTotal, getItemCount }}>
+    <CartContext.Provider value={{ 
+      cartItems, 
+      addItemToCart, 
+      removeItemFromCart, 
+      updateItemQuantity, 
+      getCartTotal, 
+      getItemCount,
+      clearCart 
+    }}>
       {children}
     </CartContext.Provider>
   );

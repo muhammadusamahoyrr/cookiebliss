@@ -71,14 +71,21 @@ const CookieVisual = () => {
         <div className={`${styles.chocoChip} ${styles.side1Chip1}`}></div>
         <div className={`${styles.chocoChip} ${styles.side1Chip2}`}></div>
         <div className={`${styles.chocoChip} ${styles.side1Chip3}`}></div>
+        <div className={styles.cookieBar}></div>
+        <div className={styles.cookieBar}></div>
       </div>
       
       <div className={`${styles.cookie} ${styles.cookieSide2} ${isVisible ? styles.visible : ''}`}>
         <div className={`${styles.chocoChip} ${styles.side2Chip1}`}></div>
         <div className={`${styles.chocoChip} ${styles.side2Chip2}`}></div>
+        <div className={styles.cookieBar}></div>
+        <div className={styles.cookieBar}></div>
       </div>
       
-      <div className={`${styles.cookie} ${styles.cookieSide3} ${isVisible ? styles.visible : ''}`}></div>
+      <div className={`${styles.cookie} ${styles.cookieSide3} ${isVisible ? styles.visible : ''}`}>
+        <div className={styles.cookieBar}></div>
+        <div className={styles.cookieBar}></div>
+      </div>
       
       {/* Floating crumbs */}
       <div className={`${styles.crumb} ${styles.crumb1} ${isVisible ? styles.visible : ''}`}></div>

@@ -14,33 +14,10 @@ const AboutSection = () => {
         <div className={styles.aboutContent}>
           <div className={styles.aboutImage}>
             <div className={styles.imageWrapper}>
-              {/* Placeholder for images */}
-              <div className={styles.mainImage} style={{
-                width: '500px',
-                height: '600px',
-                backgroundColor: '#E6BB8A',
-                borderRadius: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#8B4513',
-                fontWeight: 'bold'
-              }}>
-                Our Cozy Bakery
-              </div>
-              <div className={styles.accentImage} style={{
-                width: '300px',
-                height: '200px',
-                backgroundColor: '#C89B69',
-                borderRadius: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#fff',
-                fontWeight: 'bold'
-              }}>
-                Baking with Love
-              </div>
+              {/* Replace with your bakery image */}
+              <img src="/assests/images/image.png" alt="Our cozy bakery" className={styles.mainImage} />
+              {/* Replace with your 'Baking with Love' image */}
+              <img src="/assests/images/image.png" alt="Baking with Love image" className={styles.accentImage} />
             </div>
             
             <div className={styles.floatingStars}>

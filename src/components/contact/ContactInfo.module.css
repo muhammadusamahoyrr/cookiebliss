@@ -195,11 +195,12 @@
 }
 
 .socialIcon {
+  --social-icon-size: 48px; /* Default size, can be overridden */
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
+  width: var(--social-icon-size);
+  height: var(--social-icon-size);
   background-color: #F9F2EA;
   border-radius: 50%;
   color: var(--primary);

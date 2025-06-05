@@ -1,10 +1,11 @@
 // src/app/api/order/create/route.js
 import { NextResponse } from 'next/server';
-import dbConnect from '../../../lib/dbConnect.js';
-import Order from '../../../models/Order.js';
-import Product from '../../../models/Product.js';
-import User from '../../../models/User.js';
-import { protectedRoute } from '../../../lib/auth.js';
+import dbConnect from '@/lib/dbConnect';
+// Ensure the path to your Order model is correct. It might be in src/models/Order.js
+import Order from '@/models/Order';
+import Product from '@/models/Product';
+import User from '@/models/User';
+import { protectedRoute } from '@/lib/auth';
 import mongoose from 'mongoose';
 
 export async function POST(request) {
@@ -42,7 +43,8 @@ export async function POST(request) {
         }
 
         // Validate payment method
-        if (!paymentMethod || !['card', 'paypal', 'bank_transfer', 'cash_on_delivery'].includes(paymentMethod)) {
+        const validPaymentMethods = ['card', 'paypal', 'bank_transfer', 'cash_on_delivery'];
+        if (!paymentMethod || !validPaymentMethods.includes(paymentMethod)) {
             await session.abortTransaction();
             return NextResponse.json({ success: false, message: 'Invalid payment method' }, { status: 400 });
         }
@@ -92,38 +94,35 @@ export async function POST(request) {
             totalAmount += subtotal;
 
             orderItems.push({
-                productId: product._id,
-                title: product.title,
-                price: product.price,
+                product: product._id,
                 quantity: item.quantity,
-                subtotal,
+                price: product.price,
+                subtotal
             });
 
             // Prepare inventory update
             inventoryUpdates.push({
                 updateOne: {
                     filter: { _id: product._id },
-                    update: { $inc: { inventory: -item.quantity } },
-                    session
+                    update: { $inc: { inventory: -item.quantity } }
                 }
             });
         }
 
         // Create the order with session
-        const newOrder = new Order({
-            userId,
+        const order = new Order({
+            user: userId,
             items: orderItems,
             totalAmount,
             shippingAddress,
-            customerInfo,
             paymentMethod,
             notes: notes || '',
             status: 'pending',
-            paymentStatus: 'pending'
+            customerInfo
         });
 
         // Save order and update inventory in transaction
-        const savedOrder = await newOrder.save({ session });
+        await order.save({ session });
         await Product.bulkWrite(inventoryUpdates, { session });
 
         // Commit the transaction
@@ -132,8 +131,7 @@ export async function POST(request) {
         return NextResponse.json({
             success: true,
             message: 'Order created successfully',
-            orderId: savedOrder._id,
-            orderNumber: savedOrder.orderNumber,
+            order
         }, { status: 201 });
 
     } catch (error) {

@@ -15,15 +15,6 @@ export default function LoginPage() {
   });
   const [errors, setErrors] = useState({});
 
-  // Check if user is already logged in
-  useEffect(() => {
-    const token = localStorage.getItem('cookiebliss_token');
-    if (token) {
-      // User is already logged in, redirect to flavors
-      router.push('/flavors');
-    }
-  }, [router]);
-
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({

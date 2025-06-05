@@ -2,6 +2,7 @@
 
 .cartContainer {
   padding: 50px 20px;
+  padding-top: 6rem;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -79,16 +80,16 @@
 }
 
 .checkoutButton {
-  padding: 12px 25px;
-  background-color: #007bff;
+  padding: 15px 30px;
+  background-color: #28a745;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: 1.2em;
   transition: background-color 0.3s ease;
 }
 
 .checkoutButton:hover {
-  background-color: #0056b3;
+  background-color: #218838;
 } 

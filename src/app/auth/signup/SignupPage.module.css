@@ -5,9 +5,10 @@
 .pageContainer {
     display: flex;
     min-height: calc(100vh - var(--navbar-height, 0px));
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    background-color: var(--light-bg, #FFF9F0); /* Use light-bg variable, fallback to #FFF9F0 */
     font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     justify-content: center;
+    padding-top: var(--navbar-height, 80px); /* Add padding to push content below navbar */
   }
   
   .signupContainer {

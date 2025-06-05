@@ -7,26 +7,34 @@ import { generateToken, verifyAuth } from '@/lib/auth';
 
 export async function POST(request) {
     try {
-        // Connect to database
         await dbConnect();
 
         const { email, password } = await request.json();
 
-        // Basic validation
         if (!email || !password) {
-            return NextResponse.json({ success: false, message: 'Email and password are required' }, { status: 400 });
+            return NextResponse.json({ 
+                success: false, 
+                message: 'Email and password are required' 
+            }, { status: 400 });
         }
 
-        // Find user by email
         const user = await User.findOne({ email: email.toLowerCase() });
-        if (!user || !await bcrypt.compare(password, user.password)) {
-            return NextResponse.json({ success: false, message: 'Invalid credentials' }, { status: 401 });
+        if (!user) {
+            return NextResponse.json({ 
+                success: false, 
+                message: 'Invalid credentials' 
+            }, { status: 401 });
         }
 
-        // Generate JWT token
-        const token = generateToken(user._id);
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+        if (!isPasswordValid) {
+            return NextResponse.json({ 
+                success: false, 
+                message: 'Invalid credentials' 
+            }, { status: 401 });
+        }
 
-        // Return success response with user data (excluding password)
+        const token = generateToken(user._id);
         const userResponse = user.toObject();
         delete userResponse.password;
 
@@ -38,44 +46,42 @@ export async function POST(request) {
         }, { status: 200 });
 
     } catch (error) {
-        console.error('Login error:', error);
+        if (error.name === 'ValidationError') {
+            return NextResponse.json({ 
+                success: false, 
+                message: 'Invalid input data' 
+            }, { status: 400 });
+        }
 
-        // Handle specific errors if needed (e.g., database errors)
-
-        return NextResponse.json({ success: false, message: 'Internal server error' }, { status: 500 });
+        return NextResponse.json({ 
+            success: false, 
+            message: 'Internal server error' 
+        }, { status: 500 });
     }
 }
 
-// Optional: GET method to check if user is already logged in
 export async function GET(request) {
     try {
         await dbConnect();
 
         const authHeader = request.headers.get('authorization');
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
-            return new Response(JSON.stringify({
+            return NextResponse.json({
                 success: false,
                 message: 'No token provided'
-            }), {
-                status: 401,
-                headers: { 'Content-Type': 'application/json' }
-            });
+            }, { status: 401 });
         }
 
-        // Use the verifyAuth function directly
         const auth = await verifyAuth(request);
 
         if (!auth.isAuthenticated) {
-            return new Response(JSON.stringify({
+            return NextResponse.json({
                 success: false,
                 message: auth.error
-            }), {
-                status: 401,
-                headers: { 'Content-Type': 'application/json' }
-            });
+            }, { status: 401 });
         }
 
-        return new Response(JSON.stringify({
+        return NextResponse.json({
             success: true,
             user: {
                 id: auth.user._id,
@@ -83,19 +89,19 @@ export async function GET(request) {
                 name: auth.user.name,
                 role: auth.user.role
             }
-        }), {
-            status: 200,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        }, { status: 200 });
 
     } catch (error) {
-        console.error('Auth check error:', error);
-        return new Response(JSON.stringify({
+        if (error.name === 'JsonWebTokenError') {
+            return NextResponse.json({
+                success: false,
+                message: 'Invalid token'
+            }, { status: 401 });
+        }
+
+        return NextResponse.json({
             success: false,
             message: 'Internal server error'
-        }), {
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-        });
+        }, { status: 500 });
     }
 }

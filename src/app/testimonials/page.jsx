@@ -7,8 +7,8 @@ const sampleReviews = [
     id: '1',
     text: 'These cookies are absolutely divine! The chocolate chip ones remind me of my grandmother\'s recipe but even better. Perfect balance of crispy edges and chewy centers with just the right amount of chocolate.',
     author: {
-      name: 'Sarah Johnson',
-      initials: 'SJ'
+      name: 'Sarah Khan',
+      initials: 'SK'
     },
     rating: 5,
     date: '2 days ago',
@@ -18,8 +18,8 @@ const sampleReviews = [
     id: '2',
     text: 'The oatmeal raisin cookies were perfect - not too sweet and incredibly soft. My kids absolutely loved them and they disappeared in minutes! Will definitely be ordering again for our weekly family movie nights.',
     author: {
-      name: 'Michael Rodriguez',
-      initials: 'MR'
+      name: 'Moiz Ahmed',
+      initials: 'MA'
     },
     rating: 4.5,
     date: '1 week ago',
@@ -29,8 +29,8 @@ const sampleReviews = [
     id: '3',
     text: 'I ordered these for a company event and everyone was impressed! The presentation was beautiful and the taste was exceptional. The variety pack was a hit - something for everyone. Customer service was outstanding too!',
     author: {
-      name: 'Emma Wilson',
-      initials: 'EW'
+      name: 'Ali Khan',
+      initials: 'AK'
     },
     rating: 5,
     date: '3 days ago',
