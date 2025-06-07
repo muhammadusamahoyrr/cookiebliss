@@ -83,7 +83,7 @@ export default function LoginPage() {
 
       console.log('Login response:', { status: response.status, data });
 
-      if (response.ok && data.success) {
+      if (response.ok && data && typeof data === 'object' && data.success) {
         // Handle successful login
         console.log('Login successful:', data);
         
@@ -108,8 +108,13 @@ export default function LoginPage() {
       } else {
         // Handle login errors
         console.error('Login failed:', data);
+        // Provide a more specific error message if data.message is missing
+        const errorMessage = (data && typeof data === 'object' && data.message)
+          ? data.message
+          : (response.ok ? 'Login failed unexpectedly. Empty response data.' : 'Login failed. Please check your credentials and try again.');
+        
         setErrors({ 
-          general: data.message || 'Login failed. Please check your credentials and try again.' 
+          general: errorMessage
         });
       }
 

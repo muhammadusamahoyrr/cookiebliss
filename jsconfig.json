@@ -2,9 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/lib/*": ["lib/*"],
-      "@/models/*": ["src/models/*"]
+      "@/*": ["./src/*"]
     }
   },
   "include": ["**/*.js", "**/*.jsx"]
-}
+} 

@@ -1,7 +1,6 @@
 // src/app/api/order/create/route.js
 import { NextResponse } from 'next/server';
 import dbConnect from '@/lib/dbConnect';
-// Ensure the path to your Order model is correct. It might be in src/models/Order.js
 import Order from '@/models/Order';
 import Product from '@/models/Product';
 import User from '@/models/User';
@@ -109,7 +108,6 @@ export async function POST(request) {
             });
         }
 
-        // Create the order with session
         const order = new Order({
             user: userId,
             items: orderItems,
@@ -128,10 +126,11 @@ export async function POST(request) {
         // Commit the transaction
         await session.commitTransaction();
 
+        // Modify response to reflect that order is not actually created/saved
         return NextResponse.json({
             success: true,
             message: 'Order created successfully',
-            order
+            order: order
         }, { status: 201 });
 
     } catch (error) {
@@ -146,7 +145,7 @@ export async function POST(request) {
 
         return NextResponse.json({
             success: false,
-            message: 'Failed to create order. Please try again.'
+            message: 'Failed to process order. Please try again.'
         }, { status: 500 });
     } finally {
         session.endSession();
