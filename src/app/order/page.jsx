@@ -40,7 +40,7 @@ export default function OrderPage() {
 
           {/* Integrate PaymentMethodSelector component here */}
           <div style={{ textAlign: 'center', marginTop: '30px' }}>
-            <PaymentMethodSelector orderTotal={orderTotal.toFixed(2)} />
+            <PaymentMethodSelector orderTotal={orderTotal} />
           </div>
         </div>
       )}
