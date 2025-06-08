@@ -3,9 +3,15 @@
 import React from 'react';
 import { useCart } from '../../context/CartContext';
 import styles from './CartPage.module.css';
+import { useRouter } from 'next/navigation';
 
 export default function CartPage() {
   const { cartItems, removeItemFromCart } = useCart();
+  const router = useRouter();
+
+  const handleProceedToCheckout = () => {
+    router.push('/order');
+  };
 
   return (
     <div className={styles.cartContainer}>
@@ -37,9 +43,14 @@ export default function CartPage() {
             Total: ${cartItems.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}
           </div>
 
-          {/* Add a checkout button here later */}
           <div className={styles.checkoutButtonContainer}>
-              <button className={styles.checkoutButton}>Proceed to Checkout</button>
+              <button 
+                className={styles.checkoutButton}
+                onClick={handleProceedToCheckout}
+                disabled={cartItems.length === 0}
+              >
+                Proceed to Checkout
+              </button>
           </div>
         </div>
       )}
